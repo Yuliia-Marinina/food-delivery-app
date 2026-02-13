@@ -1,59 +1,120 @@
-# FoodDeliveryApp
+# Food Delivery App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+A modern food delivery platform built with Angular 21, featuring separate interfaces for customers and administrators.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+### For Customers
+
+- Browse food catalog with categories and filters
+- View detailed product information
+- Add items to cart and manage orders
+- User authentication and profile management
+- Order tracking and history
+- Favorites list
+- Multi-language support (EN, DE, RU)
+- Light/Dark theme
+
+### For Administrators
+
+- Product management (CRUD operations)
+- Order management and tracking
+- User management
+- Category and promocode management
+- Sales statistics and analytics dashboard
+
+## 🛠️ Tech Stack
+
+- **Framework:** Angular 21 (Standalone Components)
+- **Styling:** SCSS
+- **State Management:** RxJS / Signals
+- **Routing:** Angular Router with Guards
+- **HTTP Client:** Angular HttpClient
+- **Build Tool:** Angular CLI
+
+## 📋 Prerequisites
+
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Angular CLI (v21)
+
+## 🔧 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Yuliia-Marinina/food-delivery-app.git
+cd food-delivery-app
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200`
 
-## Code scaffolding
+## 📁 Project Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── core/          # Core services, guards, interceptors
+│   ├── shared/        # Shared components, directives, pipes
+│   ├── features/      # Feature modules (auth, products, cart, etc.)
+│   └── layout/        # Layout components
+├── assets/            # Static files (images, i18n)
+├── styles/            # Global styles and SCSS utilities
+└── environments/      # Environment configurations
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Available Scripts
 
-```bash
-ng generate --help
-```
+- `ng serve` - Run development server
+- `ng build` - Build the project for production
+- `ng test` - Run unit tests
+- `ng lint` - Lint the code
 
-## Building
+## 🌍 Deployment
 
-To build the project run:
+Coming soon...
 
-```bash
-ng build
-```
+## 📝 Git Workflow
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This project follows Git Flow branching strategy:
 
-## Running unit tests
+- `main` - Production-ready code
+- `develop` - Development branch
+- `feature/*` - Feature branches
+- `bugfix/*` - Bug fix branches
+- `hotfix/*` - Hotfix branches
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 👤 Author
 
-```bash
-ng test
-```
+**Yuliia Marinina**
 
-## Running end-to-end tests
+- GitHub: [@Yuliia-Marinina](https://github.com/Yuliia-Marinina)
 
-For end-to-end (e2e) testing, run:
+## 📄 License
 
-```bash
-ng e2e
-```
+This project is for portfolio purposes.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🔮 Roadmap
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [ ] User authentication
+- [ ] Product catalog
+- [ ] Shopping cart
+- [ ] Order management
+- [ ] Admin panel
+- [ ] Payment integration
+- [ ] Order tracking
+- [ ] Multi-language support
+- [ ] Dark theme
+- [ ] Mobile responsive design
