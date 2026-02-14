@@ -61,3 +61,14 @@ $font-size-2xl: 32px;
 
 // Transitions
 $transition-base: all 0.2s ease-in-out;
+
+// === Breakpoints (Media Queries) ===
+$breakpoint-xs: 480px; // Mobile
+$breakpoint-sm: 640px; // Small tablets
+$breakpoint-md: 768px; // Tablets
+$breakpoint-lg: 1024px; // Desktop
+$breakpoint-xl: 1280px; // Large desktop
+$breakpoint-2xl: 1536px; // Extra large
+
+// === Container Max Width ===
+$container-max-width: 1280px;

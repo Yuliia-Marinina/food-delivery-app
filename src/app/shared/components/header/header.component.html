@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!--Logo-->
+      <div class="logo">
+        <div class="logo-icon">🍽️</div>
+        <span class="logo-text">FeastFlow</span>
+      </div>
+
+      <!--Search-->
+      <div class="search-section">
+        <div class="search-bar">
+          <lucide-icon [img]="Search" [size]="20" class="search-icon"></lucide-icon>
+          <input
+            type="text"
+            placeholder="Search for pizza, burgers, sushi..."
+            class="search-input"
+          />
+        </div>
+      </div>
+
+      <!-- Right side: Location, Cart, Profile -->
+      <div class="header-actions">
+        <!--Location-->
+        <button class="location-btn">
+          <lucide-icon [img]="MapPin" [size]="18"></lucide-icon>
+          <span class="location-text">Deliver to: current location</span>
+        </button>
+
+        <!--Cart-->
+        <button class="cart-btn">
+          <div class="cart-icon-wrapper">
+            <lucide-icon [img]="ShoppingCart" [size]="24"></lucide-icon>
+            @if (cartItemCount > 0) {
+              <span class="cart-badge">{{ cartItemCount }}</span>
+            }
+          </div>
+        </button>
+
+        <!--Profile-->
+        <button class="profile-btn">
+          <lucide-icon [img]="User" [size]="24"></lucide-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
