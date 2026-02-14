@@ -2,8 +2,12 @@
   // GitHub Copilot Settings
   "github.copilot.enable": {
     "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
     "typescript": true,
-    "html": true
+    "html": true,
+    "scss": false
   },
   "github.copilot.advanced": {
     "listCount": 5

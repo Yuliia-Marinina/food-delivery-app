@@ -1,1 +1,10 @@
+// === FeastFlow Global Styles ===
+
+// 1. Variables (colors, sizes)
 @import 'styles/variables';
+
+// 2. Reset (browser style reset)
+@import 'styles/reset';
+
+// 3. Base (basic style)
+@import 'styles/base';
