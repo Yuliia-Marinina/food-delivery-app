@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ButtonComponent } from './shared/components/button/button.component';
 import { FloatingButtonsComponent } from './shared/components/floating-buttons.component/floating-buttons.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
@@ -9,10 +10,11 @@ import { PromoSectionComponent } from './shared/components/promo-section.compone
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    PromoSectionComponent,
+    ButtonComponent,
     FloatingButtonsComponent,
+    FooterComponent,
+    HeaderComponent,
+    PromoSectionComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

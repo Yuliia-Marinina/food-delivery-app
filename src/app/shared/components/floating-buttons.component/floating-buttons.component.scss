@@ -70,7 +70,7 @@
       white-space: nowrap;
 
       @media (max-width: $breakpoint-xs) {
-        display: none; // Скрыть текст на мобилке
+        display: none;
       }
     }
     &-badge {

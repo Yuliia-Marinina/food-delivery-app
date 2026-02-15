@@ -1,0 +1,95 @@
+@use 'variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  font-family: $font-family-base;
+  font-weight: 600;
+  border-radius: $radius-md;
+  transition: $transition-base;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  white-space: nowrap;
+
+  &:focus-visible {
+    outline: 2px solid $primary-orange;
+    outline-offset: 2px;
+  }
+
+  // === Variants ===
+
+  // Primary
+  &-primary {
+    background-color: $primary-orange;
+    color: $white;
+    border: 2px solid $primary-orange;
+
+    &:hover:not(.btn-disabled) {
+      background-color: $primary-orange-hover;
+      border-color: $primary-orange-hover;
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+
+    &:active:not(.btn-disabled) {
+      transform: translateY(0);
+    }
+  }
+
+  // Secondary
+  &-secondary {
+    background-color: transparent;
+    color: $primary-orange;
+    border: 2px solid $primary-orange;
+
+    &:hover:not(.btn-disabled) {
+      background-color: $primary-orange-light;
+      transform: translateY(-1px);
+    }
+
+    &:active:not(.btn-disabled) {
+      transform: translateY(0);
+    }
+  }
+
+  // Text
+  &-text {
+    background-color: transparent;
+    color: $primary-orange;
+    border: 2px solid transparent;
+
+    &:hover:not(.btn-disabled) {
+      background-color: $primary-orange-light;
+    }
+  }
+
+  // === Sizes ===
+  &-small {
+    padding: 8px 16px;
+    font-size: $font-size-sm;
+  }
+
+  &-medium {
+    padding: 12px 24px;
+    font-size: $font-size-base;
+  }
+
+  &-large {
+    padding: 16px 32px;
+    font-size: $font-size-lg;
+  }
+
+  // === Modifiers ===
+  &-full-width {
+    width: 100%;
+  }
+
+  &-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
