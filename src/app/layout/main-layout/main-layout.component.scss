@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.main {
+  &-content {
+    min-height: calc(100vh - 400px);
+
+    @media (max-width: $breakpoint-md) {
+      min-height: 50vh;
+    }
+  }
+}

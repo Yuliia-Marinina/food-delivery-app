@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.hero {
+  &-section {
+    padding: $spacing-2xl 0;
+    text-align: center;
+    background-color: $background-light;
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: $spacing-md;
+    }
+  }
+}
