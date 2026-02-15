@@ -1,1 +1,81 @@
-<p>footer.component works!</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!--Logo + Description-->
+      <div class="footer-about">
+        <div class="logo">
+          <div class="logo-icon-wrapper">
+            <img src="assets/icons/logo.svg" alt="FeastFlow Logo" class="logo-icon" />
+          </div>
+          <span class="logo-text">FeastFlow</span>
+        </div>
+
+        <p class="footer-description">
+          Delivering happiness to your doorstep, one meal at a time. Quality food from the best
+          local restaurants.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <nav class="footer-nav">
+        <h4 class="footer-nav-title">Quick Links</h4>
+
+        <ul class="footer-nav-link">
+          <li>
+            <a href="#" class="footer-link">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Become a Partner</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Driver Signup</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Business Account</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Support -->
+      <nav class="footer-nav">
+        <h4 class="footer-nav-title">Support</h4>
+        <ul class="footer-nav-list">
+          <li>
+            <a href="#" class="footer-link">Help Center</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Safety</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Follow Us -->
+      <div class="footer-social">
+        <h4 class="footer-nav-title">Follow Us</h4>
+        <div class="footer-social-links">
+          <a href="#" class="footer-social-link" aria-label="MessageSquareCode">
+            <lucide-icon [img]="MessageSquareCode" [size]="20"></lucide-icon>
+          </a>
+
+          <a href="#" class="footer-social-link" aria-label="MessageCircleCode">
+            <lucide-icon [img]="MessageCircleCode" [size]="20"></lucide-icon>
+          </a>
+
+          <a href="#" class="footer-social-link" aria-label="SmilePlus">
+            <lucide-icon [img]="SmilePlus" [size]="20"></lucide-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 FeastFlow. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

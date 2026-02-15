@@ -1,0 +1,121 @@
+@use 'variables' as *;
+
+.footer {
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding: $spacing-2xl 0 $spacing-lg;
+
+  &-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-lg;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-about {
+    max-width: 300px;
+  }
+
+  &-description {
+    font-size: $font-size-sm;
+    line-height: 1.6;
+    color: $footer-text-muted;
+  }
+
+  &-nav {
+    &-title {
+      font-size: $font-size-base;
+      font-weight: 600;
+      color: $footer-text;
+      margin-bottom: $spacing-md;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  &-link {
+    font-size: $font-size-sm;
+    color: $footer-text-muted;
+    transition: $transition-base;
+
+    &:hover {
+      color: $primary-orange;
+    }
+  }
+
+  &-social {
+    &-links {
+      display: flex;
+      gap: $spacing-md;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-full;
+      background-color: $footer-bg-hover;
+      color: $footer-text;
+      transition: $transition-base;
+
+      &:hover {
+        background-color: $primary-orange;
+        color: $footer-text;
+      }
+    }
+  }
+
+  &-bottom {
+    padding-top: $spacing-lg;
+    border-top: 1px solid $footer-border;
+    text-align: center;
+
+    @media (max-width: $breakpoint-xs) {
+      font-size: $font-size-sm;
+      color: $footer-text-subtle;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+
+    &-wrapper {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $radius-sm;
+      background-color: $primary-orange;
+    }
+  }
+
+  &-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: $primary-orange;
+  }
+}

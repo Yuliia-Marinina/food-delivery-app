@@ -72,3 +72,12 @@ $breakpoint-2xl: 1536px; // Extra large
 
 // === Container Max Width ===
 $container-max-width: 1280px;
+
+// === Footer Colors ===
+$footer-bg: $secondary-navy;
+$footer-text: $white;
+$footer-text-muted: rgba(255, 255, 255, 0.7);
+$footer-text-subtle: rgba(255, 255, 255, 0.5);
+$footer-border: rgba(255, 255, 255, 0.1);
+$footer-bg-hover: rgba(255, 255, 255, 0.1);
+$footer-bg-hover-active: rgba(255, 255, 255, 0.2);
