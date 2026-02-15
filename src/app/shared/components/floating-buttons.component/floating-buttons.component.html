@@ -1,0 +1,17 @@
+<div class="floating-buttons">
+  <!-- Help button -->
+  <button class="floating-btn floating-btn-help" aria-label="Help">
+    <lucide-icon [img]="HelpCircle" [size]="24"></lucide-icon>
+  </button>
+
+  <!-- Cart button -->
+  <button class="floating-btn floating-btn-cart">
+    <lucide-icon [img]="ShoppingCart" [size]="24"></lucide-icon>
+
+    <span class="floating-btn-text">VIEW CART</span>
+
+    @if (cartItemsCount > 0) {
+      <span class="floating-btn-badge">{{ cartItemsCount }}</span>
+    }
+  </button>
+</div>

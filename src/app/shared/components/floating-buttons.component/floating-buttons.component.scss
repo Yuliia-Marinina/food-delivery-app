@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+.floating {
+  &-buttons {
+    position: fixed;
+    bottom: $spacing-lg;
+    right: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    z-index: 1000;
+
+    @media (max-width: $breakpoint-xs) {
+      bottom: $spacing-md;
+      right: $spacing-md;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    border-radius: $radius-full;
+    box-shadow: $shadow-lg;
+    transition: $transition-base;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-2px);
+    }
+
+    // === Help button ===
+    &-help {
+      width: 56px;
+      height: 56px;
+      color: $text-dark;
+
+      @media (max-width: $breakpoint-xs) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    // === Cart button ===
+    &-cart {
+      padding: $spacing-md $spacing-lg;
+      gap: $spacing-sm;
+      background-color: $primary-orange;
+      color: $white;
+      position: relative;
+
+      &:hover {
+        background-color: $primary-orange-hover;
+      }
+
+      @media (max-width: $breakpoint-xs) {
+        padding: $spacing-sm $spacing-md;
+      }
+    }
+
+    &-text {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      white-space: nowrap;
+
+      @media (max-width: $breakpoint-xs) {
+        display: none; // Скрыть текст на мобилке
+      }
+    }
+    &-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: $error-red;
+      color: $white;
+      font-size: 11px;
+      font-weight: 600;
+      min-width: 20px;
+      height: 20px;
+      border-radius: $radius-full;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
