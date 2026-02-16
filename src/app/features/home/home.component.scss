@@ -14,3 +14,34 @@
     }
   }
 }
+
+.products {
+  &-section {
+    padding: $spacing-2xl 0;
+
+    &-title {
+      font-size: $font-size-xl;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

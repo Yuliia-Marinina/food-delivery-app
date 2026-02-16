@@ -1,1 +1,50 @@
-<p>product-card.component works!</p>
+<div class="product-card">
+  <!-- Image & Badge -->
+  <a [routerLink]="['/products', product.id]" class="product-preview">
+    <img
+      [src]="product.image"
+      [alt]="product.name"
+      class="product-image"
+      (error)="onImageError($event)"
+    />
+
+    @if (product.badge) {
+      <span class="product-badge">{{ product.badge }}</span>
+    }
+  </a>
+
+  <div class="product-content">
+    <!-- Name & Description -->
+    <div class="product-block">
+      <a [routerLink]="['/products', product.id]" class="product-name">{{ product.name }}</a>
+
+      @if (product.restaurant) {
+        <span class="product-restaurant">{{ product.restaurant }}</span>
+      }
+
+      @if (product.description) {
+        <p class="product-description">{{ product.description }}</p>
+      }
+    </div>
+
+    <!-- Rating -->
+    @if (product.rating) {
+      <div class="product-block product-rating-block">
+        <lucide-icon [img]="Star" [size]="14" class="product-rating-icon"></lucide-icon>
+
+        <span class="product-rating">{{ product.rating }}</span>
+
+        @if (product.reviewsCount) {
+          <span class="product-reviews">({{ product.reviewsCount }})</span>
+        }
+      </div>
+    }
+
+    <!-- Price & Button -->
+    <div class="product-block product-footer">
+      <span class="product-price">${{ product.price }}</span>
+
+      <app-button variant="primary" size="small">Add to Cart</app-button>
+    </div>
+  </div>
+</div>
