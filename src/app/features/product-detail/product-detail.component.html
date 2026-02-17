@@ -1,0 +1,45 @@
+<nav class="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs-wrap">
+      <a routerLink="/">Home</a>
+      <span class="breadcrumbs-separator">›</span>
+      <a routerLink="/products">Products</a>
+      <span class="breadcrumbs-separator">›</span>
+      <span class="breadcrumbs-current">{{ product?.name }}</span>
+    </div>
+  </div>
+</nav>
+
+<div class="product-detail">
+  <div class="container">
+    <div class="product-main">
+      <!-- Gallery -->
+      <div class="product-gallery">
+        <div class="gallery-main">
+          @if (product?.badge) {
+            <span class="badge">{{ product?.badge }}</span>
+          }
+          @if (activeImage) {
+            <img [src]="activeImage" [alt]="product?.name" class="gallery-main-image" />
+          }
+        </div>
+
+        <div class="gallery-thumbnails">
+          @for (image of product?.images; track image) {
+            <img
+              [src]="image"
+              [alt]="product?.name"
+              [class.active]="image === activeImage"
+              (click)="setActiveImage(image)"
+              class="gallery-thumb"
+            />
+          }
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1>{{ product?.name }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
