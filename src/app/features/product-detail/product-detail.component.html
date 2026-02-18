@@ -13,32 +13,144 @@
 <div class="product-detail">
   <div class="container">
     <div class="product-main">
-      <!-- Gallery -->
+      <!-- Gallery (Left Column) -->
       <div class="product-gallery">
-        <div class="gallery-main">
+        <div class="product-gallery-main">
           @if (product?.badge) {
-            <span class="badge">{{ product?.badge }}</span>
+            <span class="product-badge">{{ product?.badge }}</span>
           }
           @if (activeImage) {
-            <img [src]="activeImage" [alt]="product?.name" class="gallery-main-image" />
+            <img [src]="activeImage" [alt]="product?.name" class="product-gallery-image" />
           }
         </div>
 
-        <div class="gallery-thumbnails">
+        <div class="product-gallery-thumbnails">
           @for (image of product?.images; track image) {
             <img
               [src]="image"
               [alt]="product?.name"
               [class.active]="image === activeImage"
               (click)="setActiveImage(image)"
-              class="gallery-thumb"
+              class="product-gallery-thumb"
             />
           }
         </div>
       </div>
 
+      <!-- Product Info (Right Column) -->
       <div class="product-info">
-        <h1>{{ product?.name }}</h1>
+        <!-- Rating -->
+        <div class="product-rating">
+          <lucide-icon [img]="Star" [size]="16" class="product-rating-icon"></lucide-icon>
+          <span class="product-rating-value">{{ product?.rating }}</span>
+          @if (product?.reviewsCount) {
+            <span class="product-rating-count">({{ product?.reviewsCount }} reviews)</span>
+          }
+        </div>
+
+        <!-- Name -->
+        <h1 class="product-name">{{ product?.name }}</h1>
+
+        <!-- Price -->
+        <div class="product-price">
+          @if (product?.discount) {
+            <span class="product-price-original">${{ product?.originalPrice }}</span>
+          }
+          <span class="product-price-current">${{ product?.price }}</span>
+          @if (product?.discount) {
+            <span class="product-price-discount">-{{ product?.discount }}%</span>
+          }
+        </div>
+
+        <!-- Meta Info (Prep Time & Delivery) -->
+        <div class="product-meta">
+          @if (product?.prepTime) {
+            <div class="product-meta-item">
+              <lucide-icon [img]="Clock" [size]="16"></lucide-icon>
+              <span>{{ product?.prepTime }} min</span>
+            </div>
+          }
+
+          @if (product?.freeDelivery) {
+            <div class="product-meta-item">
+              <lucide-icon [img]="Truck" [size]="16"></lucide-icon>
+              <span>Free Delivery</span>
+            </div>
+          }
+        </div>
+
+        <!-- Sizes -->
+        @if (product?.sizes?.length ?? 0 > 0) {
+          <div class="product-section">
+            <h3 class="product-section-title">Select Size</h3>
+            <div class="size-options">
+              @for (size of product?.sizes; track size.id) {
+                <label class="radio-option">
+                  <input
+                    type="radio"
+                    name="size"
+                    [value]="size.id"
+                    [checked]="selectedSizeId === size.id"
+                    (change)="selectSize(size.id)"
+                  />
+                  <span class="option-label">{{ size.name }}</span>
+                  @if (size.price > 0) {
+                    <span class="option-price">+${{ size.price.toFixed(2) }}</span>
+                  }
+                </label>
+              }
+            </div>
+          </div>
+        }
+
+        <!-- Extras -->
+        @if (product?.extras?.length ?? 0 > 0) {
+          <div class="product-section">
+            <h3 class="product-section-title">Add Extras</h3>
+            <div class="extra-options">
+              @for (extra of product?.extras; track extra.id) {
+                <label class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    [checked]="extra.selected"
+                    (change)="toggleExtra(extra.id)"
+                  />
+                  <span class="option-label">{{ extra.name }}</span>
+                  <span class="option-price">+${{ extra.price.toFixed(2) }}</span>
+                </label>
+              }
+            </div>
+          </div>
+        }
+
+        <!-- Special Instructions -->
+        <div class="product-section">
+          <h3 class="product-section-title">Special Instructions</h3>
+          <textarea
+            placeholder="Add any special requests (e.g., no onions, extra sauce)"
+            rows="3"
+            class="instruction-input"
+          ></textarea>
+        </div>
+
+        <!-- Quantity -->
+        <div class="product-section">
+          <h3 class="product-section-title">Quantity</h3>
+          <div class="quantity-controls">
+            <button class="quantity-btn" (click)="decreaseQuantity()">
+              <lucide-icon [img]="Minus" [size]="16"></lucide-icon>
+            </button>
+            <span class="quantity-value">{{ quantity }}</span>
+            <button class="quantity-btn" (click)="increaseQuantity()">
+              <lucide-icon [img]="Plus" [size]="16"></lucide-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <app-button variant="primary" size="large" [fullWidth]="true" (click)="addToCart()">
+          Add to Cart - ${{ calculateTotal().toFixed(2) }}
+        </app-button>
       </div>
     </div>
   </div>
